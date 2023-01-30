@@ -2,7 +2,7 @@
 
 import random
 
-from lib import get_datapoints, dist, angle
+from lib import get_datapoints, dist, angle, route_length
 
 def closest_point(data: list[float], route: list[int]) -> int:
     closest = None
@@ -37,18 +37,25 @@ def run(data, start):
     #print(route)
     return [route]
 
-def program(example, verbose):
+def program(example, noreturn):
     data = get_datapoints(example)
     all_routes = []
 
     for i in range(len(data)):
         all_routes += run(data, i)
 
-    if verbose:
-        #for i in all_routes:
-        #    print(i)
+    if noreturn:
         return
-    return all_routes[0]
+    
+    min_len = 1000000
+    shortest = None
+    for i in all_routes:
+        l = route_length(data, i)
+        if l < min_len:
+            min_len = l
+            shortest = i
+
+    return i
 
 if __name__ == "__main__":
     program(6, True)

@@ -18,3 +18,9 @@ def angle(p0: list[float], p1: list[float], p2: list[float]) -> float:
     if rhs < -1:
         rhs = -1
     return math.degrees(math.acos(rhs))
+
+def route_length(data, route):
+    total = 0
+    for i in range(len(route) - 1):
+        total += dist(data[route[i]], data[route[i+1]])
+    return total
