@@ -24,7 +24,7 @@ def closest_point(data: list[float], route: list[int]) -> int:
         raise Exception("arghhhh")
     return closest
 
-data = get_datapoints(2)
+data = get_datapoints(7)
 
 route = [0]
 

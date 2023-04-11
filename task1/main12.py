@@ -47,15 +47,24 @@ def program(example, noreturn):
     if noreturn:
         return
     
-    min_len = 1000000
+    print("---")
+    print(all_routes)
+    min_len = float("inf")
     shortest = None
     for i in all_routes:
         l = route_length(data, i)
+        print(i, l)
         if l < min_len:
             min_len = l
             shortest = i
 
+    print("---")
+    print(shortest)
+
     return i
 
 if __name__ == "__main__":
-    program(6, True)
+    program(7, True)
+    #program(6, False)
+    #print(program(1, True))
+

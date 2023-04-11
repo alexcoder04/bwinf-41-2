@@ -6,7 +6,7 @@ import pygame
 from lib import get_datapoints
 from main12 import program
 
-EXAMPLE = 6
+EXAMPLE = 3
 
 pygame.init()
 
